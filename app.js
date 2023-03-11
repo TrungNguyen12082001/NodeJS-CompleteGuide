@@ -11,8 +11,9 @@ const flash = require("connect-flash");
 const errorController = require("./controllers/error");
 const User = require("./models/user");
 
-const MONGODB_URI =
-  "mongodb+srv://TrungNguyen-NodeComplete:WkzTfrNMAvDP5RNw@cluster0.wjkvrnd.mongodb.net/shop?retryWrites=true&w=majority";
+require("dotenv").config();
+
+const MONGODB_URI = `${process.env.MONGODB_URI}`;
 
 const app = express();
 const store = new MongoDBStore({
